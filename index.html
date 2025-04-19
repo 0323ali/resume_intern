@@ -580,6 +580,16 @@
                 });
             });
         });
+
+        document.addEventListener("DOMContentLoaded", function() {
+        if (localStorage.getItem('visitorCount')) {
+            let count = parseInt(localStorage.getItem('visitorCount'));
+            localStorage.setItem('visitorCount', count + 1);
+        } else {
+            localStorage.setItem('visitorCount', 1);
+        }
+        console.log("Visitor number (local to browser): " + localStorage.getItem('visitorCount'));
+     });
     </script>
 </body>
 </html>
