@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moazzam Ali - Electrical Engineer</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Enhanced Navbar Styles */
+        .navbar {
+            background: linear-gradient(135deg, #2c3e50 0%, #1a1a2e 100%) !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 12px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+            color: white !important;
+            display: flex;
+            align-items: center;
+        }
+        
+        .navbar-brand i {
+            margin-right: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .navbar-nav .nav-link {
+            color: rgba(255, 255, 255, 0.85) !important;
+            font-weight: 500;
+            padding: 8px 15px;
+            margin: 0 5px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            color: white !important;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #9d50bb;
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .navbar-nav .nav-item.active .nav-link {
+            color: white !important;
+            font-weight: 600;
+        }
+        
+        .navbar-nav .nav-item.active .nav-link::after {
+            width: 100%;
+        }
+        
+        .navbar-toggler {
+            border: none;
+            padding: 0.5rem;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+        
+        @media (max-width: 991.98px) {
+            .navbar-collapse {
+                background: rgba(26, 26, 46, 0.95);
+                padding: 20px;
+                border-radius: 8px;
+                margin-top: 10px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            }
+            
+            .navbar-nav .nav-link {
+                margin: 5px 0;
+                padding: 10px 15px;
+            }
+        }
+
+        /* Profile Image Styles */
+        .profile-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            margin: 30px auto;
+            display: block;
+            transition: all 0.3s ease;
+        }
+        
+        .profile-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        /* Hero Section Styles */
+        .hero-section {
+            background: linear-gradient(135deg, #6e48aa 0%, #9d50bb 100%);
+            color: white;
+            padding: 80px 0 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L100,0 L100,100 L0,100 Z"></path></svg>');
+            background-size: cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            position: relative;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.6rem;
+            margin-bottom: 0;
+            position: relative;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+        
+        .section-divider {
+            border-top: 2px solid rgba(255,255,255,0.2);
+            margin: 30px auto;
+            width: 80%;
+        }
+
+        /* Section Styles */
+        .section-title {
+            border-bottom: 3px solid #6e48aa;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 30px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .objective-content {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .objective-content p {
+            margin-bottom: 1.2rem;
+        }
+
+        /* Skills Badges */
+        .skill-badge {
+            margin: 5px;
+            background-color: #6e48aa;
+            color: white;
+            padding: 8px 15px !important;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .skill-badge:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Project Cards */
+        .project-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 20px;
+            height: 100%;
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .project-card .card-body {
+            padding: 1.5rem;
+        }
+        
+        .project-card .card-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .project-card .card-text {
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Certificate Links */
+        .certificate-link {
+            color: #6e48aa;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.2s ease;
+        }
+        
+        .certificate-link:hover {
+            color: #9d50bb;
+            text-decoration: underline;
+        }
+
+        /* Contact Section */
+        .contact-icon {
+            font-size: 1.2rem;
+            margin-right: 8px;
+            color: #6e48aa;
+        }
+        
+        .contact-btn {
+            transition: all 0.3s ease;
+            font-weight: 500;
+            padding: 10px 20px;
+        }
+        
+        .contact-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 30px 0;
+        }
+        
+        .social-icons a {
+            color: white;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .social-icons a:hover {
+            transform: translateY(-5px);
+            color: #9d50bb;
+        }
+        
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Enhanced Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-user-shield"></i> Moazzam Ali
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Profile Image -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="hero-title">Moazzam Ali</h1>
+            <p class="hero-subtitle">Electrical Engineer</p>
+            <p class="hero-subtitle">Specializing in Computer Engineering</p>
+            
+            <!-- Circular Profile Image -->
+            <img src="me.jpeg" alt="Moazzam Ali" class="profile-image">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Objective</h2>
+            <div class="objective-content">
+                <p>
+                    As an 8th-semester Electrical Engineering student with specialization in computer, 
+                    I am looking for an internship to implement my theoretical concepts on real-world problems. 
+                    I am interested in working on embedded systems, IoT, automation, or AI-based technology projects 
+                    and acquiring hands-on experience with industry tools.
+                </p>
+                <p>
+                    This internship will improve my technical skills, give me industry exposure, and enable me to 
+                    excel in developing electrical and computer engineering innovations.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Education</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">COMSATS University Islamabad - Wah Campus</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">2021 - 2025 (expected in June 2025)</h6>
+                            <p class="card-text">BEE (Bachelor's in Electrical Engineering) specialization in computer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h2 class="section-title text-center mt-5">Certifications</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Python from Google <a href="https://coursera.org/share/c9733f21ad07a3f5895dd747a87f17a5" class="certificate-link">View Certificate</a></li>
+                                <li class="list-group-item">Supervised Machine Learning <a href="https://coursera.org/share/f9a39958d4bb4b3c7b63bf943cce06bf" class="certificate-link">View Certificate</a></li>
+                                <li class="list-group-item">Convolutional Neural Networks DeepLearning.AI <a href="https://coursera.org/share/004a69be07484e2cea891cde47274b70" class="certificate-link">View Certificate</a></li>
+                                <li class="list-group-item">HTML CSS Java-Script from Meta 
+                                    <a href="https://coursera.org/share/460228209af5d3a7fd66fc99c7541e6f" class="certificate-link">(HTML&CSS)</a> 
+                                    <a href="https://coursera.org/share/58f4422ffd18122d2e40fe24d2ff30a1" class="certificate-link">(JavaScript)</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Skills</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-10 text-center">
+                    <span class="badge skill-badge">C++</span>
+                    <span class="badge skill-badge">Python</span>
+                    <span class="badge skill-badge">Algorithms & Data Structures</span>
+                    <span class="badge skill-badge">Matlab</span>
+                    <span class="badge skill-badge">Verilog HDL</span>
+                    <span class="badge skill-badge">FPGAs</span>
+                    <span class="badge skill-badge">Digital Image Processing</span>
+                    <span class="badge skill-badge">Machine Learning</span>
+                    <span class="badge skill-badge">Electronics</span>
+                    <span class="badge skill-badge">Circuit Design</span>
+                    <span class="badge skill-badge">Microcontrollers</span>
+                    <span class="badge skill-badge">Problem-solving</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Projects</h2>
+            <div class="row">
+                <!-- Project 1 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card project-card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Home Automation System</h5>
+                            <p class="card-text">Developed a comprehensive home automation to remotely control and monitor household devices.</p>
+                            <div class="mt-auto">
+                                <span class="badge bg-primary">IoT</span>
+                                <span class="badge bg-secondary">Embedded Systems</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card project-card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Smart Energy Meter</h5>
+                            <p class="card-text">Designed and implemented a smart energy meter capable of real-time monitoring of electricity consumption and detecting potential theft.</p>
+                            <div class="mt-auto">
+                                <span class="badge bg-primary">IoT</span>
+                                <span class="badge bg-info">Energy</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card project-card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Object Detection with CNN</h5>
+                            <p class="card-text">Built a CNN-based object detection model to identify and localize potholes and speed bumps.</p>
+                            <div class="mt-auto">
+                                <span class="badge bg-success">Deep Learning</span>
+                                <span class="badge bg-warning text-dark">Computer Vision</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card project-card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Text to Image Generation</h5>
+                            <p class="card-text">Text-to-image generation using Hugging Face involves leveraging models like Stable Diffusion to create images from text prompts.</p>
+                            <div class="mt-auto">
+                                <span class="badge bg-success">AI</span>
+                                <span class="badge bg-danger">Generative Models</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-4">
+                <div class="col-md-12">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Work Experience</h5>
+                            <p class="card-text">Data annotation for YOLOv5, a deep learning algorithm used for real-time object detection.</p>
+                            <span class="badge bg-dark">Computer Vision</span>
+                            <span class="badge bg-secondary">Data Annotation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Contact</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card shadow-sm">
+                        <div class="card-body text-center">
+                            <h4><i class="fas fa-envelope contact-icon"></i> moakali360@gmail.com</h4>
+                            <h4 class="mt-3"><i class="fas fa-phone contact-icon"></i> +92 323 9075060</h4>
+                            <h4 class="mt-3"><i class="fab fa-whatsapp contact-icon"></i> +92 323 9075060 (WhatsApp)</h4>
+                            <h4 class="mt-3"><i class="fas fa-map-marker-alt contact-icon"></i> Islamabad sector E11/1</h4>
+                            
+                            <div class="mt-4 d-flex flex-wrap justify-content-center">
+                                <a href="mailto:moakali360@gmail.com" class="btn btn-primary contact-btn me-2 mb-2">
+                                    <i class="fas fa-envelope"></i> Email Me
+                                </a>
+                                <a href="https://wa.me/923239075060" class="btn btn-success contact-btn me-2 mb-2">
+                                    <i class="fab fa-whatsapp"></i> WhatsApp
+                                </a>
+                                <a href="tel:+923239075060" class="btn btn-info contact-btn mb-2">
+                                    <i class="fas fa-phone"></i> Call Me
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <p>&copy; 2023 Moazzam Ali. All rights reserved.</p>
+            <div class="social-icons mt-3">
+                <a href="https://www.linkedin.com/in/moazzam-ali-k0323/" class="mx-2" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="https://github.com/0323ali" class="mx-2" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Add active class to current nav item
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section');
+            
+            function changeActiveLink() {
+                let index = sections.length;
+                
+                while(--index && window.scrollY + 100 < sections[index].offsetTop) {}
+                
+                navLinks.forEach(link => link.parentElement.classList.remove('active'));
+                navLinks[index].parentElement.classList.add('active');
+            }
+            
+            changeActiveLink();
+            window.addEventListener('scroll', changeActiveLink);
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 70,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
