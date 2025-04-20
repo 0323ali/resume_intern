@@ -291,6 +291,43 @@
             position: relative;
             z-index: 1;
         }
+
+        /* Download Button Styles */
+        .download-btn {
+            background: linear-gradient(135deg, #6e48aa 0%, #9d50bb 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            color: white;
+        }
+
+        .download-btn i {
+            margin-right: 8px;
+            font-size: 1.1rem;
+        }
+
+        .nav-download-btn {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.3);
+            margin-left: 10px;
+        }
+
+        .nav-download-btn:hover {
+            background: rgba(255,255,255,0.2);
+        }
     </style>
 </head>
 <body>
@@ -320,6 +357,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-download-btn" href="Moazzam_Ali(resume).pdf" download="Moazzam_Ali(resume).pdf">
+                            <i class="fas fa-download"></i> CV
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -334,6 +376,8 @@
             
             <!-- Circular Profile Image -->
             <img src="me.jpeg" alt="Moazzam Ali" class="profile-image">
+
+            
         </div>
     </section>
 
@@ -484,8 +528,6 @@
               </span>
             </div>
 
-
-            
             <div class="row mt-4">
                 <div class="col-md-12">
                     <div class="card shadow-sm">
@@ -500,6 +542,7 @@
             </div>
         </div>
     </section>
+
     <!-- Contact Section -->
     <section id="contact" class="py-5">
         <div class="container">
